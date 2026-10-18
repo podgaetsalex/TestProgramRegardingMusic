@@ -1,0 +1,44 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 584
+  ClientWidth = 804
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object btExit: TButton
+    Position.X = 72.000000000000000000
+    Position.Y = 248.000000000000000000
+    TabOrder = 1
+    Text = #1042#1099#1093#1086#1076
+    OnClick = btExitClick
+  end
+  object btLoad: TButton
+    Position.X = 160.000000000000000000
+    Position.Y = 248.000000000000000000
+    TabOrder = 2
+    Text = #1047#1072#1075#1088#1091#1079#1080#1090#1100
+    OnClick = btLoadClick
+  end
+  object btPlay: TButton
+    Position.X = 248.000000000000000000
+    Position.Y = 248.000000000000000000
+    TabOrder = 3
+    Text = #1048#1075#1088#1072#1090#1100
+    OnClick = btPlayClick
+  end
+  object btStop: TButton
+    Position.X = 336.000000000000000000
+    Position.Y = 248.000000000000000000
+    TabOrder = 5
+    Text = #1054#1089#1090#1072#1085#1086#1074#1080#1090#1100
+    OnClick = btStopClick
+  end
+  object mpMusic: TMediaPlayer
+    FileName = 'C:\Music\02 More to This Life.wma'
+    Left = 360
+    Top = 152
+  end
+end

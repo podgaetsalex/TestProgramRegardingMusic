@@ -1,0 +1,68 @@
+unit Unit1;
+
+interface
+
+uses
+   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Media,
+  FMX.Controls.Presentation, FMX.StdCtrls;
+
+type
+   TForm1 = class(TForm)
+    mpMusic: TMediaPlayer;
+    btExit: TButton;
+    btLoad: TButton;
+    btPlay: TButton;
+    btStop: TButton;
+    procedure btExitClick(Sender: TObject);
+    procedure btLoadClick(Sender: TObject);
+    procedure btPlayClick(Sender: TObject);
+    procedure btStopClick(Sender: TObject);
+   private
+      { Private declarations }
+   public
+      { Public declarations }
+   end;
+
+var
+   Form1: TForm1;
+
+implementation
+
+{$R *.fmx}
+
+procedure TForm1.btExitClick(Sender: TObject); begin Application.Terminate; end;
+
+procedure TForm1.btLoadClick(Sender: TObject);
+begin
+   mpMusic.Clear;
+   mpMusic.FileName := 'C:\Music\23 - Arrival to Earth.mp3';
+end;
+
+
+
+procedure TForm1.btPlayClick(Sender: TObject);
+begin
+   if mpMusic <> nil
+   then
+      begin
+        if mpMusic.State = TMediaState.Playing
+        then mpMusic.Stop
+        else
+           if mpMusic.State = TMediaState.Stopped
+           then begin
+              mpMusic.Stop;
+              mpMusic.CurrentTime := 0;
+              mpMusic.Volume := 1;
+              mpMusic.Play;
+           end;
+      end;
+end;
+
+procedure TForm1.btStopClick(Sender: TObject);
+begin
+   if mpMusic <> nil
+   then mpMusic.Stop;
+end;
+
+end.
