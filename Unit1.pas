@@ -31,7 +31,7 @@ implementation
 
 {$R *.fmx}
 
-procedure TForm1.btExitClick(Sender: TObject); begin Application.Terminate; end;
+procedure  TForm1.btExitClick(Sender: TObject); begin Application.Terminate; end;
 
 procedure TForm1.btLoadClick(Sender: TObject);
 begin
